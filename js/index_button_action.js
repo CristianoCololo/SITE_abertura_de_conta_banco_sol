@@ -4,7 +4,7 @@ const code = document.getElementById("passwolrd");
 const aderirButton = document.getElementById("buttonAderir");
 
 aderirButton.addEventListener('click', () => {
-    window.location.href = "add2.php"
+    window.location.href = "aderir.php"
 
 });
 
