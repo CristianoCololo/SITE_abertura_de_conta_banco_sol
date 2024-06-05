@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +16,16 @@
         <span>Para iniciar o processo de abertura de conta online, precisamos que preenchas o formuário a baixo com os seus dados pessoais.
         </span>
     </header>
-
+    <div class="progress">
+        <ul>
+            <li>Indetificao</li>
+            <li>Documentos</li>
+            <li>Dados Adicionais</li>
+            <li>Concluindo</li>
+        </ul>
+    </div>
     <main>
-        <article>
+        <article class="indetificao">
             <div class="form">
                 <label>NOME DE USUARIO</label><br>
                 <input type="name" required><br><br><br>
@@ -37,9 +45,44 @@
                 <input type="submit" value="Avançar">
             </div>
         </article>
+        <article class="documetos">
+            <div>
+                <label>A SUA FOTO</label>
+                <input type="file" required><br>
+
+                <label>O DOCUMENTO FRONTAL E VERÇO DO SEU BI</label>
+                <input type="file" required><br>
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Limpar">
+                <input type="submit" value="Validar">
+            </div>
+        </article>
+        <article class="adicionais">
+            <div>
+                <label>DATA DE NASCIMENTO</label>
+                <input type="date" required><br>
+
+                <label>Genero:</label><br>
+                <input type="radio" id="m" name="m"><br>
+                <label>Masculino</label><br>
+                <input type="radio" id="f" name="f"><br>
+                <label>Feminino</label><br>
+
+                <label>NUMERO DO DOCUMENTO BI</label>
+                <input type="text" required><br>
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Limpar">
+                <input type="submit" value="Validar">
+            </div>
+        </article>
+        <article class="conclusao">
+
+        </article>
     </main>
 
-    
+
 
 </body>
 
