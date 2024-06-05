@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
     <header>
@@ -15,15 +13,16 @@
         <span id="subtitulo"> Abertura de Conta no Banco Sol Online</span>
         <span>Para iniciar o processo de abertura de conta online, precisamos que preenchas o formuário a baixo com os seus dados pessoais.
         </span>
+        <div class="progress">
+            <ul>
+                <li>Indetificao</li>
+                <li>Documentos</li>
+                <li>Dados Adicionais</li>
+                <li>Concluindo</li>
+            </ul>
+        </div>
     </header>
-    <div class="progress">
-        <ul>
-            <li>Indetificao</li>
-            <li>Documentos</li>
-            <li>Dados Adicionais</li>
-            <li>Concluindo</li>
-        </ul>
-    </div>
+    
     <main>
         <article class="indetificao">
             <div class="form">

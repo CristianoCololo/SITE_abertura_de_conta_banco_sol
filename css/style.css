@@ -3,14 +3,19 @@
     src: url('../font/poe.ttf');
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 header{
     background-color: #f5c107;
     width: 100%;
     margin: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.362);
+}
+main{
+    background-color: blueviolet;
 }
 
 header h1{
@@ -45,15 +50,7 @@ header span{
     width: 100%;
     margin-bottom: 10px;
 }
-
-main article{
-
-}
-
 .form{
-    position: absolute;
-    top: 50%;
-    left: 50%;
     border-radius: 25px;
     padding: 25px;
     transform: translate(-50%,-30%);
@@ -84,14 +81,12 @@ label {
 }
 
 .buttons{
-    position: absolute;
     bottom: 0;
     padding-bottom: 20px;
     display: flex;
     flex-direction: row;
 }
 .buttons input{
-   position: relative;
    left: 300px;
    margin-left: 10px;
    margin-right: 10px; 
