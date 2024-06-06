@@ -27,18 +27,22 @@
     <main>
         <article class="indetificao">
             <div class="form">
-                <label>NOME DE USUARIO</label><br>
-                <input type="name" required><br><br><br>
-
-                <label>EMAIL</label><br>
-                <input type="email" required><br><br><br>
-
-
-                <label>PASSWORD </label><br>
-                <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" required> <br><br><br>
-
-                <label>CONFIRMAR PASSWORD</label><br>
-                <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" required><br><br><br>
+                <div class="input_username_div">
+                    <label>NOME DE USUARIO</label>
+                    <input type="name" required>
+                </div>
+                <div class="input_email_div">
+                    <label>EMAIL</label>
+                    <input type="email" required>
+                </div>
+                <div class="input_password_div">
+                    <label>PASSWORD </label>
+                    <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" required>
+                </div>
+                <div class="input_confirm_password_div">
+                    <label>CONFIRMAR PASSWORD</label>
+                    <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" required>    
+                </div>
             </div>
             <div class="buttons">
                 <input type="submit" value="Voltar">

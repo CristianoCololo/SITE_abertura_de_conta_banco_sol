@@ -20,7 +20,7 @@
         </div>
 
         <div class="passcode_div">
-            <label for="username">Codigo Passe</label>
+            <label for="username">Codigo Passe</label>   
             <input type="password" id="passwolrd" name="code" inputmode="numeric" pattern="[0-9]*" maxlength="4">
         </div>
         

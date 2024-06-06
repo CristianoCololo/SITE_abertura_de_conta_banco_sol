@@ -1,11 +1,27 @@
+*{
+    font-family: sans-serif;
+}
 @font-face{
     font-family: "Poe";
     src: url('../font/poe.ttf');
+}
+@font-face{
+    font-family: "Ub";
+    src: url('../font/ubuntu_b.ttf');
+}
+@font-face{
+    font-family: "Ul";
+    src: url('../font/ubuntu_l.ttf');
+}
+@font-face{
+    font-family: "Ur";
+    src: url('../font/ubuntu_r.ttf');
 }
 
 body{
     display: flex;
     flex-direction: column;
+    justify-items: center;
     height: 100vh;
 }
 
@@ -13,9 +29,49 @@ header{
     background-color: #f5c107;
     width: 100%;
     margin: 0;
+    flex-grow: 1;
+    padding-top: 20px;
 }
+header span#subtitulo{
+    font-size: 1.1em;
+    font-family: "Ub";
+    color: white;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+header span{
+    font-size: 1em;
+    font-family: "Ul";
+    color: white;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+header div.progress ul{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+header div.progress ul li{
+    display: inline-block;
+    text-align: center;
+    flex-grow: 1;
+    font-family: "Ur";
+    padding: 10px 5px;
+    border-top: 1px solid #fff;
+    color: #fff;
+    background-color: #000;
+    opacity: .2;
+}
+
 main{
-    background-color: blueviolet;
+    flex-grow: 3;
 }
 
 header h1{
@@ -30,54 +86,38 @@ header h1{
     font-family: "Poe";
 }
 
-header span#subtitulo{
-    font-size: 1.1em;
-    font-family: sans-serif;
-    color: white;
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 40px;
-}
-
-header span{
-    font-size: 1em;
-    font-family: sans-serif;
-    color: white;
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 10px;
-}
 .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-radius: 25px;
     padding: 25px;
-    transform: translate(-50%,-30%);
+    margin: 10px;
+    margin-top: 20px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.242);
 }
-
-label {
-    margin: 5px;
-    font-weight: 200;
-    font-size: .75em;
-    color: black;
-    text-transform: uppercase;
-    opacity: 0.7;
-    font-family: sans-serif;
+.form div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
-
-.form input{
+.form div label{
+    font-size: .7em;
+    font-family: "Ub";
+    opacity: .8;
+    text-transform: uppercase;
+}
+.form div input{
     padding: 10px;
-    border-radius: 4px;
     border: 0;
-    border-bottom: 0.2px solid grey;
+    border-bottom: 1px solid grey;
     background-color: transparent;
-    width: 300px;
+    width: 500px;
     outline: none;
     font-size: 1em;
     color: black;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 .buttons{
