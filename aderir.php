@@ -45,8 +45,8 @@
                 </div>
             </div>
             <div class="buttons">
-                <input type="submit" value="Voltar">
-                <input type="submit" value="Avançar">
+                <button>Voltar</button>
+                <button>Avançar</button>
             </div>
         </article>
         <article class="documetos">
