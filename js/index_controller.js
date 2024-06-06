@@ -4,8 +4,6 @@ const code = document.getElementById("passwolrd");
 const aderirButton = document.getElementById("buttonAderir");
 
 aderirButton.addEventListener('click', () => {
-    alert("CLICADO")
-    window.location.href = "aderi.P hp?article='indetificacao'"
 
 });
 

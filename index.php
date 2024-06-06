@@ -28,7 +28,12 @@
         <input type="submit" value="Entrar" id="buttonEntrar" >
 </div>
 
-    <input type="submit" value="Aderir" id="buttonAderir">
+    <form action="aderir.php" method="post">
+        <input type="hidden" name="article" value="indetificacao">
+        <input type="submit" value="Aderir" id="buttonAderir">
+    </form>
+    
+    
     
     <script src="js/index_controller.js"></script>    
 </body>

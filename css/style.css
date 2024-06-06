@@ -2,11 +2,12 @@ body{
     display: flex;
     flex-direction: column;
     justify-items: center;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
-
 header{
     background-color: #f5c107;
+    border-radius: 25px;
     width: 100%;
     margin: 0;
     flex-grow: 1;
@@ -22,7 +23,6 @@ header span#subtitulo{
     margin-top: 20px;
     margin-bottom: 40px;
 }
-
 header span{
     font-size: 1em;
     font-family: "Ul";
@@ -32,7 +32,6 @@ header span{
     width: 100%;
     margin-bottom: 10px;
 }
-
 header div.progress ul{
     display: flex;
     flex-wrap: nowrap;
