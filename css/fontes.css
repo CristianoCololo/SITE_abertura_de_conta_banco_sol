@@ -1,0 +1,23 @@
+*{
+    font-family: sans-serif;
+}
+@font-face{
+    font-family: "Teko";
+    src: url('../font/teko.ttf');
+}
+@font-face{
+    font-family: "Poe";
+    src: url('../font/poe.ttf');
+}
+@font-face{
+    font-family: "Ub";
+    src: url('../font/ubuntu_b.ttf');
+}
+@font-face{
+    font-family: "Ul";
+    src: url('../font/ubuntu_l.ttf');
+}
+@font-face{
+    font-family: "Ur";
+    src: url('../font/ubuntu_r.ttf');
+}

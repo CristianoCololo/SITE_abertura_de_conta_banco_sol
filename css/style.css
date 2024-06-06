@@ -1,23 +1,3 @@
-*{
-    font-family: sans-serif;
-}
-@font-face{
-    font-family: "Poe";
-    src: url('../font/poe.ttf');
-}
-@font-face{
-    font-family: "Ub";
-    src: url('../font/ubuntu_b.ttf');
-}
-@font-face{
-    font-family: "Ul";
-    src: url('../font/ubuntu_l.ttf');
-}
-@font-face{
-    font-family: "Ur";
-    src: url('../font/ubuntu_r.ttf');
-}
-
 body{
     display: flex;
     flex-direction: column;
@@ -82,8 +62,8 @@ header h1{
     font-size: 3em;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: -1px;
-    font-family: "Poe";
+    letter-spacing: 1px;
+    font-family: "Teko";
 }
 
 .form{
@@ -126,13 +106,18 @@ header h1{
     padding: 10px;
     margin: 20px 10px;
     width: 100%;
-    align-items: end;
+    justify-content: center;
+    align-items: center;
 }
 .buttons button{
-    flex-grow: 1;
     text-align: center;
-    display: inline-block;
-    border-color: 1px solid #f5c107;
-    border-radius: 25%;
+    border: 1px solid #f5c10785;
+    margin: 0 70px;
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
     font-family: "Ur";
+}
+.buttons button:hover{
+    border: 2px solid #f5c107;
 }
