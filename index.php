@@ -30,6 +30,6 @@
 
     <input type="submit" value="Aderir" id="buttonAderir">
     
-    <script src="js/index_button_action.js"></script>    
+    <script src="js/index_controller.js"></script>    
 </body>
 </html>
