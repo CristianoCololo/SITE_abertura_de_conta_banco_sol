@@ -32,6 +32,10 @@
         <input type="hidden" name="article" value="indetificacao">
         <input type="submit" value="Aderir" id="buttonAderir">
     </form>
+
+    <footer>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus consequuntur excepturi consectetur animi iste rem quasi non ipsam facilis temporibus. At officiis, inventore commodi impedit vel dignissimos tempore sint repellat?</p>
+    </footer>
     
     
     

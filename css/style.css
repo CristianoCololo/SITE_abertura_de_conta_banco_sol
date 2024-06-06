@@ -4,9 +4,10 @@ body{
     justify-items: center;
     height: 100%;
     width: 100%;
+    background-color: yellow;
 }
 header{
-    background-color: #f5c107;
+    background-color: yellow;
     border-radius: 25px;
     width: 100%;
     margin: 0;
@@ -16,7 +17,7 @@ header{
 header span#subtitulo{
     font-size: 1.1em;
     font-family: "Ub";
-    color: white;
+    color: black;
     text-align: center;
     display: inline-block;
     width: 100%;
@@ -26,7 +27,7 @@ header span#subtitulo{
 header span{
     font-size: 1em;
     font-family: "Ul";
-    color: white;
+    color: black;
     text-align: center;
     display: inline-block;
     width: 100%;
@@ -48,7 +49,6 @@ header div.progress ul li{
     background-color: #000;
     opacity: .2;
 }
-
 main{
     flex-grow: 3;
 }
@@ -67,6 +67,7 @@ header h1{
 
 .indetificao .form, .documentos .form, .adicionais .form{
     display: flex;
+    background-color: #fff;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -115,7 +116,9 @@ header h1{
 }
 .buttons button{
     text-align: center;
-    border: 1px solid #f5c10785;
+    border: 1px solid #000;
+    color: #000;
+    opacity: .8;
     margin: 0 70px;
     width: 100px;
     height: 40px;
@@ -123,5 +126,6 @@ header h1{
     font-family: "Ur";
 }
 .buttons button:hover{
-    border: 2px solid #f5c107;
+    border: 2px solid #fff;
+    opacity: 1;
 }

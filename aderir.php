@@ -11,13 +11,13 @@
 </head>
 
 <body>
-<?php
+    <?php
     switch ($_POST['article']) {
         case 'indetificacao':
-            $header_info = "Para iniciar o processo de abertura de conta online, precisamos que insira alguns dados de indetificacao.";        
+            $header_info = "Para iniciar o processo de abertura de conta online, precisamos que insira alguns dados de indetificacao.";
             break;
         case "documentos":
-            $header_info = "Precisamos de imagens claras e nitidas do seu bilhete para continuar";        
+            $header_info = "Precisamos de imagens claras e nitidas do seu bilhete para continuar";
             break;
         case "adicionais":
             $header_info = "Falta pouco, preencha alguns dados adicionais para terminar";
@@ -26,10 +26,10 @@
             $header_info = "Feito. Sua Conta foi criada com sucesso, clique em 'Feito. para continuar";
             break;
         default:
-            
+
             break;
     }
-?>
+    ?>
     <header>
         <h1>BANCO SOL</h1>
         <span id="subtitulo"> Abertura de Conta no Banco Sol Online</span>
@@ -47,7 +47,7 @@
     <main>
 
         <?php
-            if ($_POST["article"] == "indetificacao") :
+        if ($_POST["article"] == "indetificacao") :
         ?>
             <article class="indetificao">
                 <div class="form">
@@ -69,11 +69,11 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    
+
                     <form action="index.php" method="post">
                         <button>Voltar</button>
                     </form>
-                    
+
                     <form action="aderir.php" method="post">
                         <input type="hidden" name="article" value="documentos">
                         <button>Avançar</button>
@@ -81,9 +81,9 @@
                 </div>
             </article>
 
-        <?php 
-            endif;//
-            if ($_POST["article"] == "documentos"):
+        <?php
+        endif; //
+        if ($_POST["article"] == "documentos") :
         ?>
             <article class="documentos">
                 <div class="form">
@@ -106,75 +106,82 @@
                         <button>Voltar</button>
                     </form>
                     <form action="aderir.php" method="post">
+                    <input type="hidden" name="article" value="adicionais">
                         <button>Avançar</button>
                     </form>
-                    
+
                 </div>
             </article>
-        
-        <?php 
-            endif;
-            if ($_POST["article"] == "adicionais") :
+
+        <?php
+        endif;
+        if ($_POST["article"] == "adicionais") :
         ?>
 
-        <article class="adicionais">
-            <div class="form">
-                <div class="input_data_nascimento_div">
-                    <label>Data de nascimento</label>
-                    <input type="date" id="data_nascimento">
+            <article class="adicionais">
+                <div class="form">
+                    <div class="input_data_nascimento_div">
+                        <label>Data de nascimento</label>
+                        <input type="date" id="data_nascimento">
+                    </div>
+                    <div class="input_genero_div">
+                        <label>Genero:</label><br>
+                        <input type="radio" id="m" name="m">
+                        <label>Masculino</label><br>
+                        <input type="radio" id="f" name="f">
+                        <label>Feminino</label><br>
+                    </div>
+                    <div class="input_provincia_div">
+                        <label>Provincia</label>
+                        <select name="provincias" id="provincias">
+                            <option>Luanda</option>
+                            <option>Malanje</option>
+                            <option>Bengo</option>
+                            <option>Benguela</option>
+                            <option>Cabinda</option>
+                            <option>Cunene</option>
+                            <option>Cuando Cubango</option>
+                            <option>Muxico</option>
+                            <option>Huila</option>
+                            <option>Zaire</option>
+                            <option>Kuanza Sul</option>
+                            <option>Kuanza Norte</option>
+                            <option>Namibe</option>
+                            <option>Huambo</option>
+                            <option>Lunda Norte</option>
+                            <option>Lunda Sul</option>
+                            <option>Uige</option>
+                            <option>Bie</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="input_genero_div">
-                    <label>Genero:</label><br>
-                    <input type="radio" id="m" name="m">
-                    <label>Masculino</label><br>
-                    <input type="radio" id="f" name="f">
-                    <label>Feminino</label><br>
+                <div class="buttons">
+                    <form action="aderir.php" method="post">
+                        <input type="hidden" name="article" value="documentos">
+                        <button>Voltar</button>
+                    </form>
+                    <form action="aderir.php" method="post">
+                    <input type="hidden" name="article" value="concluido">
+                        <button>Avançar</button>
+                    </form>
                 </div>
-                <div class="input_provincia_div">
-                    <label>Provincia</label>
-                    <se1lect name="provincias" id="provincias">
-                        <option>Luanda</option>
-                        <option>Malanje</option>
-                        <option>Bengo</option>
-                        <option>Benguela</option>
-                        <option>Cabinda</option>
-                        <option>Cunene</option>
-                        <option>Cuando Cubango</option>
-                        <option>Muxico</option>
-                        <option>Huila</option>
-                        <option>Zaire</option>
-                        <option>Kuanza Sul</option>
-                        <option>Kuanza Norte</option>
-                        <option>Namibe</option>
-                        <option>Huambo</option>
-                        <option>Lunda Norte</option>
-                        <option>Lunda Sul</option>
-                        <option>Uige</option>
-                        <option>Bie</option>
-                    </se1lect>
-                </div>
-            </div>
-            <div class="buttons">
-                <button>Voltar</button>
-                <button>Avançar</button>
-            </div>
-        </article>
+            </article>
 
-        <?php 
-            endif;
-            if ($_POST["article"] == "conclusao") :
+        <?php
+        endif;
+        if ($_POST["article"] == "conclusao") :
         ?>
 
-        <article class="conclusao">
+            <article class="conclusao">
 
-        </article>
+            </article>
 
-        <?php 
-            endif;
-          
+        <?php
+        endif;
+
         ?>
 
-        
+
     </main>
 
 

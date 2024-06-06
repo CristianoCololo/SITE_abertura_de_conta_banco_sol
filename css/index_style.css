@@ -111,3 +111,11 @@ input#buttonEntrar{
     background-color: #f5c107;
     color: white;
 }
+
+footer{
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    z-index: 4;
+}
