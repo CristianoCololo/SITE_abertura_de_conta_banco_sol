@@ -6,16 +6,26 @@ feito_button.addEventListener('click', () => {
     let dadosDocumentacao = JSON.parse(localStorage.getItem('dadosDocumentacao'));
     let dadosAdicional = JSON.parse(localStorage.getItem('dadosAdicional'));
 
+    let dados_para_guardar = {
+        'nome_do_usuario' : dadosIdentificacao['username'],
+        'email': dadosIdentificacao['email'],
+        'codigo': dadosIdentificacao['password'],
+        'numero_bilhete': dadosDocumentacao['bi'],
+        'data_de_nascimento': dadosAdicional['data_nascimento'],
+        'genero': dadosAdicional['genero'],
+        'provincia': dadosAdicional['provincia'],
+        'submit' :  "<code."
+    }
+
+    let result;
+
     var requestOptions = {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dados)
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(dados_para_guardar)
     };
 
-    // Faz a solicitação usando fetch
-    fetch('arquivo1.php', requestOptions)
+    fetch('armazenarDados.php', requestOptions)
     .then(function(response) {
         if (!response.ok) {
             throw new Error('Ocorreu um erro ao processar a solicitação.');
@@ -23,14 +33,15 @@ feito_button.addEventListener('click', () => {
         return response.text();
     })
     .then(function(data) {
-        // Exibe a resposta do arquivo1.php
-        document.getElementById('resultado').innerHTML = data;
+        result = data;
     })
     .catch(function(error) {
-        // Trata erros, se houver
         console.error('Erro:', error);
     });
-    
+
+    if (result === 'ok') {
+        alert("Tudo OK");
+    }
 });
 
 descartar_button.addEventListener('click', () => {

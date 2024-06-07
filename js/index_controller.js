@@ -16,7 +16,6 @@ entrarButton.addEventListener('click', () => {
             return response.json();
         })
         .then(data => {
-            // Corrigido para acessar as propriedades do objeto JSON corretamente
 
             let database_username = data.data.nome;
             let input_username = username.value;
