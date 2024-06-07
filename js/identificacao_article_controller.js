@@ -19,34 +19,7 @@ function sendData(article_name) {
 
     if (processo['success']) {
 
-        let arquivo_criado;
-
-        var requestOptions = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(processo['data'])
-        };
-
-
-        fetch('../aderindo.php', requestOptions)
-            .then(function (response) {
-                if (!response.ok) {
-                    throw new Error('Ocorreu um erro ao processar a solicitação.');
-                }
-                return response.text();
-            })
-            .then(function (data) {
-                arquivo_criado = data;
-            })
-            .catch(function (error) {
-                console.error('Erro:', error);
-            });
-
-        if (arquivo_criado) {
-
-        }
+        localStorage.setItem('dadosIdentificacao', JSON.stringify(processo['data']));
 
         const form = document.createElement('form');
         form.method = 'POST';
