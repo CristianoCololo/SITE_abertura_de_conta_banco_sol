@@ -1,6 +1,6 @@
 const entrarButton = document.getElementById("buttonEntrar");
-const username = document.getElementById("username");
-const code = document.getElementById("passwolrd");
+const email = document.getElementById("email");
+const code = document.getElementById("password");
 const aderirButton = document.getElementById("buttonAderir");
 
 aderirButton.addEventListener('click', () => {

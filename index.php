@@ -12,7 +12,8 @@
     <nav>
         <form action="" method="post">
             <ul>
-                
+                <li>Home</li>
+                <li>Sobre</li>
             </ul>
         </form>
     </nav>
@@ -22,14 +23,14 @@
     </header>
 
     <div class="form">
-        <div class="username_div">
-            <label for="username">Nome de Usuario</label>
-            <input type="text" id="username" name="username">
+        <div class="email_div">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
         </div>
 
         <div class="passcode_div">
             <label for="username">Codigo Passe</label>   
-            <input type="password" id="passwolrd" name="code" inputmode="numeric" pattern="[0-9]*" maxlength="4">
+            <input type="password" id="password" name="code" inputmode="numeric" pattern="[0-9]*" maxlength="6">
         </div>
         
         <input type="submit" value="Entrar" id="buttonEntrar" >
