@@ -1,13 +1,13 @@
-const avancar_button = document.querySelector("#avancar");
-const voltar_button = document.querySelector("#voltar");
-
+import {  } from "form.js";
+import {  } from "util.js";
 
 const nextPage = "adicional";
 const previousPage = "identificacao";
 
-
 voltar_button.addEventListener('click', () => {
-    window.location.href = 'index.php'
+    localStorage.removeItem('dadosDocumentacao');
+    localStorage.removeItem('dadosAdicional');
+    sendForm('POST','aderir.php','article',previousPage);
 });
 
 avancar_button.addEventListener('click', () => {
@@ -16,25 +16,9 @@ avancar_button.addEventListener('click', () => {
 
 function sendData(article_name) {
     let processo = processarDocumentacao();
-
     if (processo['success']) {
-        
         localStorage.setItem('dadosDocumentacao', JSON.stringify(processo['data']));
-        
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = 'aderir.php';
-
-        const hiddenField = document.createElement('input');
-        hiddenField.type = 'hidden';
-        hiddenField.name = 'article';
-        hiddenField.value = article_name;
-        form.appendChild(hiddenField);
-
-        form.style.display = "none";
-        document.body.appendChild(form);
-        form.submit();
-
+        sendForm('POST','aderir.php','article',nextPage);
     } else {
         alert(processo['msg']);
     }

@@ -1,13 +1,13 @@
-const avancar_button = document.querySelector("#avancar");
-const voltar_button = document.querySelector("#voltar");
+import {  } from "form.js";
+import {  } from "util.js";
 
 
 const nextPage = "conclusao";
 const previousPage = "documentacao";
 
-
 voltar_button.addEventListener('click', () => {
-    window.location.href = 'index.php'
+    localStorage.removeItem('dadosAdicional');
+    sendForm('POST','aderir.php','article',previousPage);
 });
 
 avancar_button.addEventListener('click', () => {
@@ -15,38 +15,19 @@ avancar_button.addEventListener('click', () => {
 });
 
 function sendData(article_name) {
-    const data = {
-        article: article_name
-    };
-
-    let processo = processarAdicional();
-
+    let processo = processarDocumentacao();
     if (processo['success']) {
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = 'aderir.php';
-
-        for (const key in data) {
-            if (data.hasOwnProperty(key)) {
-                const hiddenField = document.createElement('input');
-                hiddenField.type = 'hidden';
-                hiddenField.name = key;
-                hiddenField.value = data[key];
-                form.appendChild(hiddenField);
-            }
-        }
-
-        form.style.display = "none";
-        document.body.appendChild(form);
-        form.submit();
+        localStorage.setItem('dadosAdicional ', JSON.stringify(processo['data']));
+        sendForm('POST','aderir.php','article',nextPage);
     } else {
         alert(processo['msg']);
     }
 }
 
 function processarAdicional() {
-
     const data_nascimento = document.getElementById("data_nascimento").value;
+    const genero = document.getElementById("genero_choice").value;
+    const provincia = document.getElementById("provincia").value;
 
     if (!data_nascimento) {
         return { 'success': false, 'msg': "A data de nascimento nao pode estar vazia" };
@@ -57,5 +38,5 @@ function processarAdicional() {
     if (2024 - parseInt(ano) < 18) {
         return { 'success': false, 'msg': "Precisa ser maior de 18 para abrir uma conta online"};
     }
-    return { 'success': true, 'msg': "" };
+    return { 'success': true, 'data': { 'data_nascimento' : data_nascimento, 'genero' : genero, 'provincia' : provincia} };
 }
