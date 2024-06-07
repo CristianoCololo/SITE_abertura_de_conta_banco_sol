@@ -67,12 +67,12 @@
                     </div>
                     <div class="input_confirm_password_div">
                         <label>CONFIRMAR PASSWORD</label>
-                        <input type="password" maxlength="6" id="confirmed_password">
+                        <input type="password" maxlength="6" minlength="4" id="confirmed_password">
                     </div>
                 </div>
                 <div class="buttons">
-                    <button id="voltarFromIdentificacao" value="index.php">Voltar</button>
-                    <button id="avancarFromIdentificacao" value="documentacao">Avançar</button>
+                    <button id="voltar">Voltar</button>
+                    <button id="avancar">Avançar</button>
                 </div>
             </article>
         <?php
@@ -83,28 +83,23 @@
             <article class="documentacao">
                 <div class="form">
                     <div class="input_foto_div">
-                        <label>Escolha uma foto de Perfil (Opcional)</label>
+                        <label>Foto de Perfil (Opcional)</label>
                         <input type="file" id="foto_perfil">
                     </div>
                     <div class="input_bi_frente_div">
-                        <label>Carrege a foto do seu bilhete - frente</label>
-                        <input type="file" id="bi_frente">
-                    </div>
-                    <div class="input_bi_verso_div">
-                        <label>Carrege a foto do seu bilhete - verso</label>
-                        <input type="file" id="bi_verso">
+                        <label>Numero de Bilhete de identidade</label>
+                        <input type="text" id="numero_bi">
                     </div>
                 </div>
-                
                 <div class="buttons">
-                    <button id="voltarFromDocumentacao" value="identificacao" >Voltar</button>
-                    <button id="avancarFromDocumentacao" value="adicional">Avançar</button>
+                    <button id="voltar">Voltar</button>
+                    <button id="avancar">Avançar</button>
                 </div>
             </article>
         <?php
             endif;
 
-        if ($_POST["article"] == "adicionais") :
+        if ($_POST["article"] == $article_names[2]) :
         ?>
             <article class="adicional">
                 <div class="form">
@@ -113,10 +108,10 @@
                         <input type="date" id="data_nascimento">
                     </div>
                     <div class="input_genero_div">
-                        <label>Genero:</label>
+                        <label>Genero</label>
                         <select name="genero_choice" id="genero_choice" >
-                            <option value="Masculino"></option>
-                            <option value="Femenino"></option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
                         </select>
                     </div>
                     <div class="input_provincia_div">
@@ -125,14 +120,14 @@
                             <?php
                                 $provincias = array("Bengo","Benguela","Bié","Cabinda","Cuando Cubango","Cuanza Norte","Cuanza Sul","Cunene","Huambo","Huíla","Luanda","Lunda Norte","Lunda Sul","Malanje","Moxico","Namibe","Uíge","Zaire");
                                 for ($i = 0; $i < 18; $i++) : ?>
-                                <option value="<?php echo $provincias[$i]?>"></option>
+                                <option value="<?php echo $provincias[$i]?>"><?php echo $provincias[$i]?></option>
                             <?php endfor; ?>
                         </select>
                     </div>
                 </div>
                 <div class="buttons">
-                    <button id="voltarFromDocumentacao" value="documentacao" >Voltar</button>
-                    <button id="avancarFromDocumentacao" value="conclusao"></button>>Avançar</button>
+                    <button id="voltar">Voltar</button>
+                    <button id="avancar">Avançar</button>
                 </div>
             </article>
 

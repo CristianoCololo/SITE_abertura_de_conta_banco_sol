@@ -96,7 +96,7 @@ article div.form{
     opacity: .8;
     text-transform: uppercase;
 }
-.form div input{
+.form div input, select{
     padding: 10px;
     border: 0;
     border-bottom: 1px solid grey;
@@ -107,7 +107,7 @@ article div.form{
     color: black;
     letter-spacing: 2px;
 }
-.documentacao .form div input{
+.documentacao .form div input, select{
     border: 1px solid grey;
     margin: 15px 0;
     border-radius: 5px;

@@ -1,13 +1,16 @@
-const avancarFromIdentificacaoButton = document.querySelector("#avancarFromIdentificacao");
-const voltarFromIdentificacaoButton = document.querySelector("#voltarFromIdentificacao");
+const avancar = document.querySelector("#avancar");
+const voltar = document.querySelector("#voltar");
 
+
+const nextPage = "documentacao";
+const previousPage = "index.php";
 
 voltarFromIdentificacaoButton.addEventListener('click', () => {
-    window.location.href = 'index.php'
+    window.location.href = previousPage;
 });
 
 avancarFromIdentificacaoButton.addEventListener('click', () => {
-    sendData(avancarFromIdentificacaoButton.value);
+    sendData(nextPage);
 });
 
 function sendData(article_name) {
