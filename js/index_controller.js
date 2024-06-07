@@ -4,7 +4,7 @@ const code = document.getElementById("passwolrd");
 const aderirButton = document.getElementById("buttonAderir");
 
 aderirButton.addEventListener('click', () => {
-
+    
 });
 
 entrarButton.addEventListener('click', () => {

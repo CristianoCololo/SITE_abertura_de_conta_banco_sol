@@ -9,6 +9,13 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <form action="" method="post">
+            <ul>
+                
+            </ul>
+        </form>
+    </nav>
     <header>
         <h1>BANCO SOL</h1>
         <span>Abertura de Conta no Banco Sol Online</span>
@@ -26,10 +33,10 @@
         </div>
         
         <input type="submit" value="Entrar" id="buttonEntrar" >
-</div>
+    </div>
 
     <form action="aderir.php" method="post">
-        <input type="hidden" name="article" value="indetificacao">
+        <input type="hidden" name="article" value="identificacao">
         <input type="submit" value="Aderir" id="buttonAderir">
     </form>
 
