@@ -139,13 +139,6 @@ article div.form{
     border-bottom-left-radius: 25px;
 }
 
-.buttons button#feito{
-    border-radius: 25px;
-    background-color: #00b600;
-    color: #fff;
-    border: 1px solid #00b600;
-}
-
 .buttons > button:last-child{
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -155,4 +148,22 @@ article div.form{
     opacity: 1;
     color: #ff9800;
     box-shadow: 2px 2px 4px #0000006c;
+}
+.buttons button#feito{
+    border-radius: 25px;
+    background-color: #00b600;
+    color: #fff;
+    border: 1px solid #00b600;
+}
+.buttons button#descartar{
+    border: none;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #f00;
+    font-family: "Ub";
+}
+.buttons button#descartar:hover{
+    background-color: #f00;
+    color: #fff;
+    font-family: "Ur";
 }

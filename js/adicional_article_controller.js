@@ -48,7 +48,7 @@ function processarAdicional() {
 
     const data_nascimento = document.getElementById("data_nascimento").value;
 
-    if (!data) {
+    if (!data_nascimento) {
         return { 'success': false, 'msg': "A data de nascimento nao pode estar vazia" };
     }
     const date = new Date(data_nascimento);

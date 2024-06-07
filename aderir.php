@@ -1,10 +1,18 @@
+<?php
+    if (isset($_POST["article"])) {
+        $articles_posted = $_POST["article"];
+    }else{
+        $articles_posted = "identificacao";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aderir::<?php echo $_POST['article'] ?></title>
+    <title>Aderir::<?php echo $articles_posted ?></title>
     <link rel="stylesheet" href="css/fontes.css">
     <link rel="stylesheet" href="css/destyle.css">
     <link rel="stylesheet" href="css/style.css">
@@ -14,7 +22,7 @@
     <?php
         $article_names = array('identificacao','documentacao','adicional','conclusao');
         
-        switch ($_POST['article']) {
+        switch ($articles_posted) {
             case $article_names[0]:
                 $header_info = "Para iniciar o processo de abertura de conta online, precisamos que insira alguns dados de identificacao.";
                 break;
@@ -25,7 +33,7 @@
                 $header_info = "Falta pouco, preencha alguns dados adicionais para terminar";
                 break;
             case $article_names[3]:
-                $header_info = "Feito. Sua Conta foi criada com sucesso, clique em 'Feito' para terminar";
+                $header_info = "Feito. Seus dados estao em ordem, clique em 'Feito' para confirmar";
                 break;
             default:
             $header_info = "OCORREU UM ERRO, POR FAVOR CONTACTE O DESENVOLVEDOR";
@@ -39,17 +47,17 @@
         <span><?php echo $header_info; ?></span>
         <div class="progress">
             <ul>
-                <li <?php echo (($_POST["article"] == $article_names[0]) ?  "class=\"enable\"" : "") ?>>Indetificao</li>
-                <li <?php echo (($_POST["article"] == $article_names[1]) ?  "class=\"enable\"" : "") ?>>Documentos</li>
-                <li <?php echo (($_POST["article"] == $article_names[2]) ?  "class=\"enable\"" : "") ?>>Dados Adicionais</li>
-                <li <?php echo (($_POST["article"] == $article_names[3]) ?  "class=\"enable\"" : "") ?>>Concluindo</li>
+                <li <?php echo (($articles_posted == $article_names[0]) ?  "class=\"enable\"" : "") ?>>Indetificao</li>
+                <li <?php echo (($articles_posted == $article_names[1]) ?  "class=\"enable\"" : "") ?>>Documentos</li>
+                <li <?php echo (($articles_posted == $article_names[2]) ?  "class=\"enable\"" : "") ?>>Dados Adicionais</li>
+                <li <?php echo (($articles_posted == $article_names[3]) ?  "class=\"enable\"" : "") ?>>Concluindo</li>
             </ul>
         </div>
     </header>
 
     <main>
         <?php
-            if ($_POST["article"] == $article_names[0]): // ------------------------------------------------- //
+            if ($articles_posted == $article_names[0]): // ------------------------------------------------- //
         ?>
             <article class="identificacao">
                 <div class="form">
@@ -78,7 +86,7 @@
         <?php
             endif;
 
-            if ($_POST["article"] == $article_names[1]): // ----------------------------------------------------//
+            if ($articles_posted == $article_names[1]): // ----------------------------------------------------//
         ?>
             <article class="documentacao">
                 <div class="form">
@@ -99,7 +107,7 @@
         <?php
             endif;
 
-        if ($_POST["article"] == $article_names[2]) :
+        if ($articles_posted == $article_names[2]) :
         ?>
             <article class="adicional">
                 <div class="form">
@@ -133,18 +141,17 @@
 
         <?php
         endif;
-        if ($_POST["article"] == $article_names[3]) :
+        if ($articles_posted == $article_names[3]) :
         ?>
 
             <article class="concluido">
                 <div class="form">
                     <img src="img/done.png" alt="Done">
-                    <p>Cadastro concluido com sucesso</p>
+                    <p>Cadastro concluido</p>
                 </div>
                 <div class="buttons">
-                    <form action="index.php" method="post">
-                        <button id="feito">Feito</button>
-                    </form>
+                    <button id="feito">Feito</button>
+                    <button id="descartar">Descartar</button>
                 </div>
             </article>
 
@@ -155,7 +162,7 @@
     </main>
 
     
-<script src="js/<?php echo $_POST['article'] ?>_article_controller.js"></script>
+<script src="js/<?php echo $articles_posted ?>_article_controller.js"></script>
 </body>
 
 </html>
