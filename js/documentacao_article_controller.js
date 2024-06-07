@@ -15,30 +15,50 @@ avancar_button.addEventListener('click', () => {
 });
 
 function sendData(article_name) {
-    const data = {
-        article: article_name
-    };
-
     let processo = processarDocumentacao();
 
     if (processo['success']) {
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = 'aderir.php';
+        let arquivo_criado;
+        var requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(processo['data'])
+        };
 
-        for (const key in data) {
-            if (data.hasOwnProperty(key)) {
-                const hiddenField = document.createElement('input');
-                hiddenField.type = 'hidden';
-                hiddenField.name = key;
-                hiddenField.value = data[key];
-                form.appendChild(hiddenField);
-            }
+
+        fetch('../aderindo.php', requestOptions)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Ocorreu um erro ao processar a solicitação.');
+                }
+                return response.text();
+            })
+            .then(function (data) {
+                arquivo_criado = data;
+            })
+            .catch(function (error) {
+                console.error('Erro:', error);
+            });
+
+        if (arquivo_criado) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'aderir.php';
+
+            const hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = 'article';
+            hiddenField.value = article_name;
+            form.appendChild(hiddenField);
+        
+            form.style.display = "none";
+            document.body.appendChild(form);
+            form.submit();
         }
 
-        form.style.display = "none";
-        document.body.appendChild(form);
-        form.submit();
+        
     } else {
         alert(processo['msg']);
     }
@@ -57,5 +77,5 @@ function processarDocumentacao() {
         return { 'success': false, 'msg': "Esse numero de BI não é válido" };
     }
 
-    return { 'success': true, 'msg': "" };
+    return { 'success': true, 'data': {'bi' : numero_bi} };
 }

@@ -13,6 +13,7 @@
         <form action="" method="post">
             <ul>
                 <li>Home</li>
+                <li><a href="aderir.ph">Aderir</a></li>
                 <li>Sobre</li>
             </ul>
         </form>

@@ -14,30 +14,53 @@ avancar.addEventListener('click', () => {
 });
 
 function sendData(article_name) {
-    const data = {
-        article: article_name
-    };
 
     let processo = processarIdentificacao();
 
     if (processo['success']) {
+
+        let arquivo_criado;
+
+        var requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(processo['data'])
+        };
+
+
+        fetch('../aderindo.php', requestOptions)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Ocorreu um erro ao processar a solicitação.');
+                }
+                return response.text();
+            })
+            .then(function (data) {
+                arquivo_criado = data;
+            })
+            .catch(function (error) {
+                console.error('Erro:', error);
+            });
+
+        if (arquivo_criado) {
+
+        }
+
         const form = document.createElement('form');
         form.method = 'POST';
         form.action = 'aderir.php';
 
-        for (const key in data) {
-            if (data.hasOwnProperty(key)) {
-                const hiddenField = document.createElement('input');
-                hiddenField.type = 'hidden';
-                hiddenField.name = key;
-                hiddenField.value = data[key];
-                form.appendChild(hiddenField);
-            }
-        }
-
+        const hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = 'article';
+        hiddenField.value = article_name;
+        form.appendChild(hiddenField);
         form.style.display = "none";
         document.body.appendChild(form);
         form.submit();
+
     } else {
         alert(processo['msg']);
     }
@@ -65,5 +88,5 @@ function processarIdentificacao() {
             return { 'success': false, 'msg': "A senha não corresponde à senha confirmada" };
         }
     }
-    return { 'success': true, 'msg': "" };
+    return { 'success': true, 'data': { 'username': username, 'email': email, 'password': password, 'goTo': nextPage } };
 }
