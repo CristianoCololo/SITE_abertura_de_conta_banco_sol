@@ -5,11 +5,11 @@ const voltar = document.querySelector("#voltar");
 const nextPage = "documentacao";
 const previousPage = "index.php";
 
-voltarFromIdentificacaoButton.addEventListener('click', () => {
+voltar.addEventListener('click', () => {
     window.location.href = previousPage;
 });
 
-avancarFromIdentificacaoButton.addEventListener('click', () => {
+avancar.addEventListener('click', () => {
     sendData(nextPage);
 });
 
