@@ -72,7 +72,7 @@
                 </div>
                 <div class="buttons">
                     <button id="voltarFromIdentificacao" value="index.php">Voltar</button>
-                    <button id="avancarFromIdentificacao" value="documentacao"></button>Avançar</button>
+                    <button id="avancarFromIdentificacao" value="documentacao">Avançar</button>
                 </div>
             </article>
         <?php
@@ -98,7 +98,7 @@
                 
                 <div class="buttons">
                     <button id="voltarFromDocumentacao" value="identificacao" >Voltar</button>
-                    <button id="avancarFromDocumentacao" value="adicional"></button>>Avançar</button>
+                    <button id="avancarFromDocumentacao" value="adicional">Avançar</button>
                 </div>
             </article>
         <?php

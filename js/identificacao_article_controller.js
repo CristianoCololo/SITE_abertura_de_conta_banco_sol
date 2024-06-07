@@ -10,7 +10,7 @@ avancarFromIdentificacaoButton.addEventListener('click', () => {
     sendData(avancarFromIdentificacaoButton.value);
 });
 
-function sendData() {
+function sendData(article_name) {
     const data = {
         article: article_name
     };

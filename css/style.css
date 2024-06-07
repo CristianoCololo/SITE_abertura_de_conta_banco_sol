@@ -72,7 +72,7 @@ header h1{
     font-family: "Teko";
 }
 
-.form{
+article div.form{
     display: flex;
     background-color: #fff;
     flex-direction: column;
@@ -107,7 +107,7 @@ header h1{
     color: black;
     letter-spacing: 2px;
 }
-.documentos .form div input{
+.documentacao .form div input{
     border: 1px solid grey;
     margin: 15px 0;
     border-radius: 5px;
