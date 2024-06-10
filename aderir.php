@@ -19,6 +19,10 @@
 </head>
 
 <body>
+    <div class="notificacao">
+        <p>Esse numero de telefone nao e valido meu brother</p>
+        <button>OK</button>
+    </div>
     <?php
         $article_names = array('identificacao','documentacao','adicional','conclusao');
         
@@ -47,7 +51,7 @@
         <span><?php echo $header_info; ?></span>
         <div class="progress">
             <ul>
-                <li <?php echo (($articles_posted == $article_names[0]) ?  "class=\"enable\"" : "") ?>>Indetificao</li>
+                <li <?php echo (($articles_posted == $article_names[0]) ?  "class=\"enable\"" : "") ?>>Indetificacao</li>
                 <li <?php echo (($articles_posted == $article_names[1]) ?  "class=\"enable\"" : "") ?>>Documentos</li>
                 <li <?php echo (($articles_posted == $article_names[2]) ?  "class=\"enable\"" : "") ?>>Dados Adicionais</li>
                 <li <?php echo (($articles_posted == $article_names[3]) ?  "class=\"enable\"" : "") ?>>Concluindo</li>
@@ -124,7 +128,7 @@
                     </div>
                     <div class="input_provincia_div">
                         <label>Provincia</label>
-                        <select name="provincias" id="provincias">
+                        <select name="provincias" id="provincia">
                             <?php
                                 $provincias = array("Bengo","Benguela","Bié","Cabinda","Cuando Cubango","Cuanza Norte","Cuanza Sul","Cunene","Huambo","Huíla","Luanda","Lunda Norte","Lunda Sul","Malanje","Moxico","Namibe","Uíge","Zaire");
                                 for ($i = 0; $i < 18; $i++) : ?>
@@ -161,8 +165,8 @@
         ?>
     </main>
 
-    
-<script src="js/<?php echo $articles_posted ?>_article_controller.js"></script>
+<script type="module"  src="js/utils.js"></script>
+<script type="module" src="js/<?php echo $articles_posted ?>_article_controller.js"></script>
 </body>
 
 </html>

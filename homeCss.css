@@ -1,0 +1,214 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color:#F00;
+	background-image:url url(../pics/JPG/PS-Works%20(63).JPG);
+	background-repeat:repeat-x;
+	/*background-position:right top;*/
+	background-size:160px 130px;
+}
+
+#mainbox {
+	width:896px;
+	height:auto;
+	margin:0 auto;
+}
+
+header {
+	width:896px;
+	height:200px;
+	background-color:rgba(0,255,0,.6);
+}
+
+#logo {
+	margin-left:30px;
+	width:130px;
+	height:107px;
+	box-shadow:2px 2px 5px #333;
+	float:left;
+	margin-right:30px;
+}
+      /* 
+
+   header h2 {  
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#030;
+	/*margin-top:30px;*/
+/*	line-height:40px;
+      */     /*     }  */ 
+
+               
+nav {
+	width:896px;
+	height:40px;
+}
+nav ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+nav ul li{
+	float:left; /*to change the vertical list into horizontal*/
+}
+
+nav ul li a{
+	display:block;
+	width:129.3px;
+	height:20px;
+	padding:10px;
+	text-align:center;
+	background-color:#C09;
+	color:#FFF;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	text-decoration:none;	
+}
+
+nav ul li a:hover {
+	background-color:#09F;
+	color:#063;
+}
+
+/*to hide the submenu*/
+nav ul li ul {
+	display:none;
+}
+
+nav ul li:hover ul{
+	display:block;
+	position:absolute;	
+}
+/*to bring the sub menu in vertical format*/
+nav ul li:hover ul li{
+	float:none;
+}
+/*to hide the submenu to the dropdown menu from displaying by default*/
+nav ul li:hover ul li ul {
+    display:none;
+	
+}
+
+/*tp display the submenu only when you place tour mouse over the
+dropdown menu item*/
+
+nav ul li:hover ul li:hover ul {
+	display:block;
+	position:absolute;
+	margin-left:95%;
+	margin-top:-20%;
+}
+
+#imagearea {
+	   width:896px;
+	   height:200px;
+	   background-color:#ccc;
+}
+#box1 {
+	width:278px;
+	height:200px;
+	background-color:#96F;
+	padding:10px;
+	float:left;
+}
+#box2 {
+	width:280px;
+	height:200px;
+	background-color:#FF0;
+	padding:10px;
+	float:left;
+}
+#box3 {
+	width:278px;
+	height:200px;
+	background-color:#F60;
+	padding:10px;
+	float:right;
+}
+	   
+section {
+	width:500px;
+	height:370px;
+	background-color:#FC3;
+	float:left;
+        
+} 
+
+
+
+
+article {
+	padding:10px;
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:10px;
+	width:460px;
+	height:auto;
+	border:solid 1px #030; 
+	border-radius:5px; 
+}
+
+article p {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#333;
+	text-align:justify;
+	border:solid 1px #030;
+	color: #FFF;
+}    
+
+article h3 {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#030;
+	text-align:left;
+	border:solid 1px #030;
+	color:blue
+
+} 
+
+	
+aside {
+	padding:10px;
+	width:376px;
+	height:350px;
+	background-color:#F93;
+	float:right;
+        color:rgb(255,255,255); 
+
+
+}
+
+aside a {
+	color:rgb(0,102,0);
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+	text-decoration:none;
+	
+}
+
+aside a:hover {
+	color:rgb(153,0,0);
+	text-decoration:underline;
+	
+
+}
+footer {
+	width:876px;
+	height:14px;
+	padding:10px;
+	background-color:rgb(0,51,0); color:rgb(255,255,255); 
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	clear:both;
+	text-align:center;
+	
+}
+
+
+header  h3 {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	/*color:#FFF; */
+	/*color:#030; */
+	color:#FF0; 
+	text-align:left;
+}    

@@ -1,5 +1,7 @@
-import {  } from "form.js";
-import {  } from "util.js";
+import { sendForm } from "js*sendForm";
+
+const avancar_button = document.querySelector("#avancar");
+const voltar_button = document.querySelector("#voltar");
 
 
 const nextPage = "conclusao";
@@ -11,18 +13,16 @@ voltar_button.addEventListener('click', () => {
 });
 
 avancar_button.addEventListener('click', () => {
-    sendData(nextPage);
-});
-
-function sendData(article_name) {
-    let processo = processarDocumentacao();
+    let processo = processarAdicional();
     if (processo['success']) {
         localStorage.setItem('dadosAdicional ', JSON.stringify(processo['data']));
         sendForm('POST','aderir.php','article',nextPage);
     } else {
         alert(processo['msg']);
     }
-}
+});
+
+
 
 function processarAdicional() {
     const data_nascimento = document.getElementById("data_nascimento").value;
@@ -34,9 +34,13 @@ function processarAdicional() {
     }
     const date = new Date(data_nascimento);
     const ano = date.getFullYear();
+    const mes = date.getMonth();
+    const dia = date.getDay();
+
+    
     
     if (2024 - parseInt(ano) < 18) {
         return { 'success': false, 'msg': "Precisa ser maior de 18 para abrir uma conta online"};
     }
-    return { 'success': true, 'data': { 'data_nascimento' : data_nascimento, 'genero' : genero, 'provincia' : provincia} };
+    return { 'success': true, 'data': { 'data_nascimento' : (ano + "-" + mes + "-" + dia), 'genero' : genero, 'provincia' : provincia} };
 }

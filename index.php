@@ -11,11 +11,7 @@
 <body>
     <nav>
         <form action="" method="post">
-            <ul>
-                <li>Home</li>
-                <li><a href="aderir.ph">Aderir</a></li>
-                <li>Sobre</li>
-            </ul>
+            
         </form>
     </nav>
     <header>
@@ -35,16 +31,29 @@
         </div>
         
         <input type="submit" value="Entrar" id="buttonEntrar" >
-    </div>
-
-    <form action="aderir.php" method="post">
+        <form action="aderir.php" method="post">
         <input type="hidden" name="article" value="identificacao">
         <input type="submit" value="Aderir" id="buttonAderir">
     </form>
 
-    <footer>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus consequuntur excepturi consectetur animi iste rem quasi non ipsam facilis temporibus. At officiis, inventore commodi impedit vel dignissimos tempore sint repellat?</p>
-    </footer>
+      <footer style="footer:
+	width:876px;
+	height:14px;
+	padding:10px;
+	background-color:yellow; 
+	font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	clear:both;
+	text-align:center;">
+        BANCOL SOL
+      </footer>
+    </div>
+
+    
+      
+      
+        
+    
     
     
     

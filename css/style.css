@@ -5,10 +5,39 @@ body{
     height: 100%;
     width: 100%;
 }
+
+.notificacao{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 0 18px #0000002f;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: none;
+}
+.notificacao p{
+    letter-spacing: 1.5px;
+    text-align: justify;
+}
+.notificacao button{
+    padding: 10px 20px;
+    text-align: center;
+    border: 1px solid #000;
+}
+
 header{
-    background: linear-gradient(45deg, #ffeb3b, #ff9800);
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    background: linear-gradient(135deg, #e0e0e0, rgba(255, 255, 255, 0.5), #e0e0e0);
     width: 100%;
     margin: 0;
     flex-grow: 1;
@@ -18,7 +47,6 @@ header{
 header span#subtitulo{
     font-size: 1.1em;
     font-family: "Ub";
-    color: #fff;
     text-align: center;
     display: inline-block;
     width: 100%;
@@ -45,7 +73,6 @@ header div.progress ul li{
     flex-grow: 1;
     font-family: "Ur";
     padding: 10px 5px;
-    color: #fff;
     background-color: transparent;
     opacity: .45;
 }
@@ -74,16 +101,13 @@ header h1{
 
 article div.form{
     display: flex;
-    background-color: #fff;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
     height: 400px;
     padding: 25px;
     margin: 10px;
     margin-top: 20px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.242);
 }
 .form div{
     display: flex;
@@ -128,7 +152,7 @@ article div.form{
     text-align: center;
     border: 1px solid #000;
     color: #000;
-    opacity: .8;
+    opacity: .6;
     margin: 0 70px;
     width: 200px;
     height: 40px;
@@ -144,10 +168,8 @@ article div.form{
     border-bottom-right-radius: 25px;
 }
 .buttons button:hover{
-    border: 2px solid #fff;
     opacity: 1;
-    color: #ff9800;
-    box-shadow: 2px 2px 4px #0000006c;
+    transform: scale(1.1);
 }
 .buttons button#feito{
     border-radius: 25px;

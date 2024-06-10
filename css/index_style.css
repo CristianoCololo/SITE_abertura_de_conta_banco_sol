@@ -104,12 +104,6 @@ input#buttonEntrar:hover, input#buttonAderir:hover {
 input#buttonEntrar{
     background-color: #f5c107;
     color: white;
+    
 }
 
-footer{
-    width: 100%;
-    background: linear-gradient(45deg, #1e3c72, #2a5298);
-    position: fixed;
-    bottom: 0;
-    z-index: -3;
-}

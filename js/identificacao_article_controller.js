@@ -1,5 +1,24 @@
-import {  } from "form.js";
-import {  } from "utils.js";
+import { mostrarNotificacao } from "./utils";
+
+function sendForm(method, action, key, value) {
+    const form = document.createElement('form');
+    form.method = method;
+    form.action = action;
+
+    const hiddenField = document.createElement('input');
+    hiddenField.type = 'hidden';
+    hiddenField.name = key;
+    hiddenField.value = value;
+    form.appendChild(hiddenField);
+
+    form.style.display = "none";
+    document.body.appendChild(form);
+    form.submit();
+
+}
+
+const avancar_button = document.querySelector("#avancar");
+const voltar_button = document.querySelector("#voltar");
 
 const avancar = document.querySelector("#avancar");
 const voltar = document.querySelector("#voltar");
@@ -9,9 +28,7 @@ const nextPage = "documentacao";
 const previousPage = "index.php";
 
 voltar.addEventListener('click', () => {
-    localStorage.removeItem('dadosIdentificacao');
-    localStorage.removeItem('dadosDocumentacao');
-    localStorage.removeItem('dadosAdicional');
+    localStorage.clear();
     window.location.href = previousPage;
 });
 
@@ -26,7 +43,7 @@ function sendData(article_name) {
         localStorage.setItem('dadosIdentificacao', JSON.stringify(processo['data']));
         sendForm('POST','aderir.php','article',nextPage);
     } else {
-        alert(processo['msg']);
+        mostrarNotificacao(processo['msg']);
     }
 }
 
@@ -51,7 +68,7 @@ function processarIdentificacao() {
         if (password !== confirmedPassword) {
             return { 'success': false, 'msg': "A senha não corresponde à senha confirmada" };
         }else if(password.length < 4) {
-            return { 'success': false, 'msg': "A senha não tem que ter 4 caracteres nominimo" };
+            return { 'success': false, 'msg': "A senha tem que ter 4 caracteres nominimo" };
         } 
     }
     return { 'success': true, 'data': { 'username': username, 'email': email, 'password': password} };
