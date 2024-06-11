@@ -22,10 +22,10 @@ feito.addEventListener('click', () => {
             }
         }    
     });
+    
     form.style.display = "none";
     document.body.appendChild(form);
     form.submit();
-    
 });
 
 descartar.addEventListener('click', () => {

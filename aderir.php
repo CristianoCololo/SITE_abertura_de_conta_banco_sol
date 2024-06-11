@@ -150,7 +150,7 @@
 
             <article class="concluido">
                 <div class="form">
-                    <img src="img/done.png" alt="Done">
+                    <img src="./assets/img/done.png" alt="Done">
                     <p>Cadastro concluido</p>
                 </div>
                 <div class="buttons">

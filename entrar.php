@@ -1,41 +1,65 @@
+<?php
+if (isset($_POST["article"])) {
+    $articles_posted = $_POST["article"];
+} else {
+    $articles_posted = "identificacao";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/fontes.css">
-    <link rel="stylesheet" href="css/destyle.css">
-    <link rel="stylesheet" href="css/entrar_style.css">
-    <title>Document</title>
+    <title>Aderir::<?php echo $articles_posted ?></title>
+    <link rel="stylesheet" href="assets/css/fontes.css">
+    <link rel="stylesheet" href="assets/css/destyle.css">
+    <link rel="stylesheet" href="assets/css/entrar_style.css">
 </head>
+
 <body>
-    <nav>
-        <form action="" method="post">
-            
-        </form>
-    </nav>
+    <div class="notificacao">
+        <p>Esse numero de telefone nao e valido meu brother</p>
+        <button>OK</button>
+    </div>
     <header>
-        <h1>BANCO SOL</h1>
-        <span>Abertura de Conta no Banco Sol Online</span>
+        <nav>
+            <ul>
+                <li onclick="goto('index.php')">Principal</li>
+                <li onclick="goto('entrar.php')">Entrar</li>
+                <li onclick="goto('aderir.php')">Aderir</li>
+                <li onclick="goto('index.php')">Ajuda</li>
+                <li onclick="goto('index.php')">Sobre</li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="form">
-        <div class="email_div">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-        </div>
+    <main>
 
-        <div class="passcode_div">
-            <label for="username">Codigo Passe</label>   
-            <input type="password" id="password" name="code" inputmode="numeric" pattern="[0-9]*" maxlength="6">
-        </div>
-        
-        <input type="submit" value="Entrar" id="buttonEntrar" >
-        <form action="aderir.php" method="post">
-        <input type="hidden" name="article" value="identificacao">
-        <input type="submit" value="Aderir" id="buttonAderir">
-    </form>
-    </div>  
-    <script src="js/index_controller.js"></script>    
+        <article>
+            <div class="form">
+                <div class="input_email_div">
+                    <label>EMAIL</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="input_password_div">
+                    <label>PASSWORD </label>
+                    <input type="password" maxlength="6" id="password">
+                </div>
+
+            </div>
+            <div class="buttons">
+                <button id="entrar">Entrar</button>
+            </div>
+            <p>Se ainda nao tem uma conta, clique <a href="">aqui</a> para aderir</p>
+        </article>
+    </main>
+
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/sendForm.js"></script>
+    <script type="module" src="js/elementos.js"></script>
+    <script type="module" src="js/<?php echo $articles_posted ?>_article_controller.js"></script>
 </body>
+
 </html>

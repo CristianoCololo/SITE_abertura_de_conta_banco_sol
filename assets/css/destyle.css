@@ -413,3 +413,7 @@ th {
   text-align: left;
   font-weight: bold;
 }
+
+nav ul li:hover{
+  cursor: pointer;
+}

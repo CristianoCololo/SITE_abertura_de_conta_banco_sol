@@ -1,8 +1,7 @@
-body{
+.page{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 0;
 }
 
 header{
@@ -28,7 +27,7 @@ header nav ul li{
 }
 
 main{
-    flex-grow: 4;
+     flex-grow: 8;
     background-color: #fff;
     width: 100%;
     padding: 25px 10px;
@@ -53,9 +52,16 @@ main .left_content p{
     line-height: 24px;
     letter-spacing: 1.2px;
 }
-main .left_content{
-    background-color: orange;
-    
+main .left_content button{
+    background-color: #FFC800;
+    font-family: 'Ub';
+    color: #fff;
+    text-align: center;
+    padding: 20px 40px;
+    width: 200px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    border: none;
 }
 
 main .right_content{
@@ -69,8 +75,24 @@ main .right_content img{
 }
 
 footer{
-    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    background-color: #FFC800;
     width: 100%;
     padding: 25px 10px;
-    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: baseline;
+    margin: 0;
+}
+
+footer div{
+    flex-grow: 1;
+    padding: 0 40px;
+}
+footer div ul li{
+    list-style: none;
+    font-family: 'Ub';
+    color: #fff;
 }

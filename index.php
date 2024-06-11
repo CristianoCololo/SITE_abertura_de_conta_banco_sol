@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/fontes.css">
+    <link rel="stylesheet" href="./assets/css/destyle.css">
     <link rel="stylesheet" href="./assets/css/index_style.css">
     <title>Sol::CriarContaOnline</title>
 </head>
-
 <body>
+    <div class="page">
     <header>
         <nav>
             <ul>
-                <li>Principal</li>
-                <li>Entrar</li>
-                <li>Aderir</li>
-                <li>Ajuda</li>
-                <li>Sobre</li>
+                <li onclick="goto('index.php')">Principal</li>
+                <li onclick="goto('entrar.php')">Entrar</li>
+                <li onclick="goto('aderir.php')">Aderir</li>
+                <li onclick="goto('index.php')">Ajuda</li>
+                <li onclick="goto('index.php')">Sobre</li>
             </ul>
         </nav>
     </header>
@@ -34,8 +35,41 @@
             <img src="./assets/img/main.png" alt="">
         </div>
     </main>
-    <footer></footer>
+    </div>
+    
+    <footer>
+        <div>
+            <h4>Contacto</h4>
+            <ul>
+                <li>Facebook: </li>
+                <li>Telefone: </li>
+                <li>Github: </li>
+            </ul>
+        </div>
+        <div>
+            <h4>Autores</h4>
+            <ul>
+                <li>Cristiano Cololo</li>
+                <li>Fernando Vunge</li>
+                <li>Josmer Ramiro</li>
+                <li>Manuel Tutu</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Tecnologias usadas</h4>
+            <ul>
+                <li>HTML 5</li>
+                <li>CSS 3</li>
+                <li>JavaScript</li>
+                <li>PHP 8</li>
+                <li>MySql</li>
+            </ul>
+        </div>
+    </footer>
     <script>
+        function goto(params) {
+            window.location.href = params;
+        }
         const aderir = document.getElementById('aderir');
         aderir.addEventListener('click', ()=>{
             window.location.href = 'aderir.php';

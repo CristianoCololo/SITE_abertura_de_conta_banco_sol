@@ -1,109 +1,149 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+body{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    background-image: url('../img/paissagem.jpg');
-    background-size: cover;
-    background-position: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
 }
+.notificacao{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 0 18px #0000002f;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: none;
+}
+.notificacao p{
+    letter-spacing: 1.5px;
+    text-align: justify;
+}
+.notificacao button{
+    padding: 10px 20px;
+    text-align: center;
+    border: 1px solid #000;
+}
+
 header{
-    margin-top: -50px;
-    margin-bottom: 70px;
+    flex-grow: 2;
+    background-color: #fff;
+    width: 100%;
+    padding: 25px 10px;
+}
+header nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+header nav ul li{
+    flex-grow: 1;
+    list-style: none;
+}
+main{
+    flex-grow: 3;
 }
 
 header h1{
     text-align: center;
-    color: #f5c107;
+    color: #fff;
     opacity: 0.7;
     font-weight: bolder;
-    font-size: 4em;
+    font-size: 3em;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-family: "Teko";
 }
-header span{
-    font-size: .8em;
-    color: rgb(187, 187, 187);
-    text-transform: uppercase;
-}
 
-.form {
+article div.form{
     display: flex;
-    flex-direction: column;
-    display: flex;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5), #e0e0e0);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
     height: 400px;
-    padding: 10px 25px; 
+    padding: 25px;
     margin: 10px;
     margin-top: 20px;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.242);
+    gap: 40px;
 }
-
+article p{
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Ur';
+}
+article p a{
+    color: #ffc800;
+    font-family: 'Ub';
+    font-size: 1.1em;
+}
 .form div{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    margin-bottom: 20px;
 }
-
-div.email_div, div.passcode_div{
-    margin-bottom: 50px;
-}
-
-label {
-    margin: 5px;
-    font-weight: bolder;
-    font-size: .75em;
-    color: #2a5298;
+.form div label{
+    font-size: .7em;
+    font-family: "Ub";
+    opacity: .8;
     text-transform: uppercase;
-    opacity: 0.7;
 }
 
-input#email, input#password {
+.form div input, select{
     padding: 10px;
     border: 0;
-    border-bottom: 0.2px solid #2a5298;
+    border-bottom: 1px solid grey;
     background-color: transparent;
-    width: 400px;
+    width: 500px;
     outline: none;
     font-size: 1em;
-    color: #1e3c72;
-    letter-spacing: 3px;
+    color: black;
+    letter-spacing: 2px;
+}
+.documentacao .form div input, select{
+    border: 1px solid grey;
+    margin: 15px 0;
+    border-radius: 5px;
 }
 
-input#buttonEntrar, input#buttonAderir {
-    background-color: #ffffff4f;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 300px;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    height: 40px;
-    font-weight: bold;
-    text-transform: uppercase;
+.buttons{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 60px;
+}
+.buttons button{
     text-align: center;
-    opacity: 0.8;
+    border: 1px solid #000;
+    color: #000;
+    opacity: .6;
+    margin: 0 70px;
+    width: 200px;
+    height: 40px;
+    font-family: "Ur";
 }
-
-input#buttonEntrar:hover, input#buttonAderir:hover {
+.buttons button:hover{
     opacity: 1;
-    cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
-input#buttonEntrar{
-    background-color: #f5c107;
-    color: white;
-    
-}
-
