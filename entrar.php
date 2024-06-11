@@ -1,11 +1,3 @@
-<?php
-if (isset($_POST["article"])) {
-    $articles_posted = $_POST["article"];
-} else {
-    $articles_posted = "identificacao";
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -60,11 +52,10 @@ if (isset($_POST["article"])) {
             window.location.href = params;
         }
     </script>
-    <script src="js/entrar.js"></script>
     <script type="module" src="js/utils.js"></script>
     <script type="module" src="js/sendForm.js"></script>
     <script type="module" src="js/elementos.js"></script>
-    <script type="module" src="js/<?php echo $articles_posted ?>_article_controller.js"></script>
+    <script src="js/entrar.js"></script>
 </body>
 
 </html>

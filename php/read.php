@@ -1,8 +1,6 @@
 <?php
-if (isset($_POST["email"]) && isset($_POST['password'])) {
-    header('Content-Type: application/json');
-
-    require_once("database_conexao.php");
+    require_once("./database_conexao.php");
+    
 
     if ($conn->connect_error) {
         die(json_encode(array("status" => "error", "message" => "Falha na conexão: " . $conn->connect_error)));
@@ -45,4 +43,3 @@ if (isset($_POST["email"]) && isset($_POST['password'])) {
     );
 
     echo json_encode($resposta);
-}
