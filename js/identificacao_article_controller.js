@@ -1,51 +1,21 @@
 import { mostrarNotificacao } from "./utils";
-
-function sendForm(method, action, key, value) {
-    const form = document.createElement('form');
-    form.method = method;
-    form.action = action;
-
-    const hiddenField = document.createElement('input');
-    hiddenField.type = 'hidden';
-    hiddenField.name = key;
-    hiddenField.value = value;
-    form.appendChild(hiddenField);
-
-    form.style.display = "none";
-    document.body.appendChild(form);
-    form.submit();
-
-}
-
-const avancar_button = document.querySelector("#avancar");
-const voltar_button = document.querySelector("#voltar");
-
-const avancar = document.querySelector("#avancar");
-const voltar = document.querySelector("#voltar");
-
-
-const nextPage = "documentacao";
-const previousPage = "index.php";
+import { sendForm } from "./sendForm";
+import { avancar, voltar } from "./elementos";
 
 voltar.addEventListener('click', () => {
     localStorage.clear();
-    window.location.href = previousPage;
+    window.location.href = "index.php";
 });
 
 avancar.addEventListener('click', () => {
-    sendData(nextPage);
-});
-
-function sendData(article_name) {
-
     let processo = processarIdentificacao();
-    if (processo['success']) {
-        localStorage.setItem('dadosIdentificacao', JSON.stringify(processo['data']));
-        sendForm('POST','aderir.php','article',nextPage);
+    if (processo.sucesso) {
+        localStorage.setItem('a_ident', JSON.stringify(processo.dados));
+        sendForm('POST','aderir.php','article',"documentacao");
     } else {
-        mostrarNotificacao(processo['msg']);
+        mostrarNotificacao(processo.info);
     }
-}
+});
 
 function processarIdentificacao() {
     const username = document.getElementById("username").value;
@@ -54,22 +24,47 @@ function processarIdentificacao() {
     const confirmedPassword = document.getElementById("confirmed_password").value
 
     if (username === '' || email === '' || password === '' || confirmedPassword === '') {
-        return { 'success': false, 'msg': "Nenhum dos campos pode estar vazio" };
+        return { 
+            'sucesso': false, 
+            'info': "Nenhum dos campos pode estar vazio",
+            'dados': null,
+        };
     } else {
         if (username.length <= 3 || /[0-9]/.test(username)) {
-            return { 'success': false, 'msg': "Esse nome de usuário não é válido" };
+            return { 
+                'sucesso': false, 
+                'info': "Esse nome de usuário não é válido. Tente outro",
+                'dados': null,
+            };
         }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return { 'success': false, 'msg': "Esse email não é válido" };
+        if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))){
+            return { 
+                'sucesso': false, 
+                'info': "Este email não é válido. Tente outro",
+                'dados': null,
+            };
         }
-
         if (password !== confirmedPassword) {
-            return { 'success': false, 'msg': "A senha não corresponde à senha confirmada" };
+            return { 
+                'sucesso': false, 
+                'info': "A senha não corresponde à senha confirmada",
+                'dados': null,
+            };
         }else if(password.length < 4) {
-            return { 'success': false, 'msg': "A senha tem que ter 4 caracteres nominimo" };
+            return { 
+                'sucesso': false, 
+                'info': "A senha deve ter no minimo quatro(4) caracteres",
+                'dados': null,
+            };
         } 
     }
-    return { 'success': true, 'data': { 'username': username, 'email': email, 'password': password} };
+    return { 
+        'sucesso': true, 
+        'info': '',
+        'dados': { 
+            'username': username, 
+            'email': email, 
+            'assword': password,
+            },
+        };
 }

@@ -1,46 +1,53 @@
-import { sendForm } from "js*sendForm";
+import { mostrarNotificacao } from "./utils";
+import { sendForm } from "./sendForm";
+import { avancar, voltar } from "./elementos";
 
-const avancar_button = document.querySelector("#avancar");
-const voltar_button = document.querySelector("#voltar");
 
-
-const nextPage = "conclusao";
-const previousPage = "documentacao";
-
-voltar_button.addEventListener('click', () => {
-    localStorage.removeItem('dadosAdicional');
-    sendForm('POST','aderir.php','article',previousPage);
+voltar.addEventListener('click', () => {
+    (localStorage.getItem('c_adic')) ? localStorage.removeItem('c_adic') : console.log();
+    sendForm('POST', 'aderir.php', 'article', 'documentacao');
 });
 
-avancar_button.addEventListener('click', () => {
+avancar.addEventListener('click', () => {
     let processo = processarAdicional();
-    if (processo['success']) {
-        localStorage.setItem('dadosAdicional ', JSON.stringify(processo['data']));
-        sendForm('POST','aderir.php','article',nextPage);
+    if (processo.sucesso) {
+        localStorage.setItem('c_adic', JSON.stringify(processo.dados));
+        sendForm('POST', 'aderir.php', 'article', 'conclusao');
     } else {
-        alert(processo['msg']);
+        mostrarNotificacao(processo.info);
     }
+
 });
-
-
 
 function processarAdicional() {
-    const data_nascimento = document.getElementById("data_nascimento").value;
+    const data_de_nascimento = document.getElementById("data_nascimento").value;
     const genero = document.getElementById("genero_choice").value;
     const provincia = document.getElementById("provincia").value;
 
-    if (!data_nascimento) {
-        return { 'success': false, 'msg': "A data de nascimento nao pode estar vazia" };
-    }
-    const date = new Date(data_nascimento);
-    const ano = date.getFullYear();
-    const mes = date.getMonth();
-    const dia = date.getDay();
 
-    
-    
-    if (2024 - parseInt(ano) < 18) {
-        return { 'success': false, 'msg': "Precisa ser maior de 18 para abrir uma conta online"};
+    if (!data_de_nascimento) {
+        return {
+            'sucesso': false,
+            'info': "A data nao pode estar vazia",
+            'dados': null,
+        };
     }
-    return { 'success': true, 'data': { 'data_nascimento' : (ano + "-" + mes + "-" + dia), 'genero' : genero, 'provincia' : provincia} };
+    const data_object = new Date(data_de_nascimento);
+
+    if (2024 - parseInt(data_object.getFullYear()) < 18) {
+        return {
+            'sucesso': false,
+            'info': "Tem que ser maior de idade  para criar uma conta online",
+            'dados': null,
+        };
+    }
+    return {
+        'sucesso': true,
+        'info': "",
+        'dados': {
+            'data': (toString(data_object.getFullYear()) + "-" + toString(data_object.getMonth()) + "-" + toString(data_object.getDay())),
+            'genero': genero,
+            'provincia': provincia,
+        },
+    };
 }

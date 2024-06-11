@@ -14,3 +14,5 @@ function sendForm(method, action, key, value) {
     form.submit();
 
 }
+
+export {sendForm};

@@ -166,6 +166,8 @@
     </main>
 
 <script type="module"  src="js/utils.js"></script>
+<script type="module"  src="js/sendForm.js"></script>
+<script type="module"  src="js/elementos.js"></script>
 <script type="module" src="js/<?php echo $articles_posted ?>_article_controller.js"></script>
 </body>
 

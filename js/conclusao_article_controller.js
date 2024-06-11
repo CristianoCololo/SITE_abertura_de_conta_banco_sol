@@ -6,14 +6,15 @@ feito_button.addEventListener('click', () => {
     let dadosDocumentacao = JSON.parse(localStorage.getItem('dadosDocumentacao'));
     let dadosAdicional = JSON.parse(localStorage.getItem('dadosAdicional'));
 
+    
+
     let dados_para_guardar = {
         'nome_do_usuario' : dadosIdentificacao['username'],
         'email': dadosIdentificacao['email'],
         'codigo': dadosIdentificacao['password'],
         'numero_bilhete': dadosDocumentacao['bi'],
-        'data_de_nascimento': dadosAdicional['data_nascimento'],
-        'genero': dadosAdicional['genero'],
-        'provincia': dadosAdicional['provincia'],
+        //'genero': dadosAdicional['genero'],
+        //'provincia': dadosAdicional['provincia'],
         'submit' :  "<code."
     }
 
@@ -33,20 +34,15 @@ feito_button.addEventListener('click', () => {
         return response.text();
     })
     .then(function(data) {
-        result = data;
+        console.log(data);
     })
     .catch(function(error) {
         console.error('Erro:', error);
     });
 
-    if (result === 'ok') {
-        alert("Tudo OK");
-    }
 });
 
 descartar_button.addEventListener('click', () => {
-    localStorage.removeItem('dadosIdentificacao');
-    localStorage.removeItem('dadosDocumentacao');
-    localStorage.removeItem('dadosAdicional');
+    localStorage.clear();
     window.location.href = 'index.php';  
 });

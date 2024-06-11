@@ -10,12 +10,14 @@ if (isset($_POST['submit'])) {
 
 		$bi = mysqli_real_escape_string($mysqli, $_POST['numero_bilhete']);
 		
-		$date = mysqli_real_escape_string($mysqli, $_POST['data_de_nascimento']);
-		$gender = mysqli_real_escape_string($mysqli, $_POST['genero']);
-		$province = mysqli_real_escape_string($mysqli, $_POST['provincia']);
+		//$date = mysqli_real_escape_string($mysqli, $_POST['data_de_nascimento']);
+		//$gender = mysqli_real_escape_string($mysqli, $_POST['genero']);
+		//$province = mysqli_real_escape_string($mysqli, $_POST['provincia']);
 		
 		
-		$result = mysqli_query($mysqli, "INSERT INTO `usuario` ( `email`, `numero_biblhete`, `nome_do_usuario`, `data_de_nascimento`, `codigo`, `genero`, `provincia`) VALUES ('".$email."', '".$bi."', '".$name."', '".$date."', '".$code."', '".$gender."', '".$province."');");	
+		$result = mysqli_query($mysqli, "INSERT INTO `usuario` ( `email`, `numero_biblhete`, `nome_do_usuario`, `data_de_nascimento`, `codigo`, `genero`, `provincia`) VALUES ('".$email."', '".$bi."', '".$name."', '2000-09-09', '".$code."', 'Femenino', 'Luanda');");	
+
+		echo "Foi dessa";
 	}		
 }
 
