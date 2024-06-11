@@ -5,7 +5,7 @@ feito.addEventListener('click', () => {
     //const documentacao = JSON.parse(localStorage.getItem('b_docu'));
     //const adicional = JSON.parse(localStorage.getItem('c_adic'));
 
-    fetch('../create.php', {
+    fetch('create.php', {
         method: 'POST',
         body: JSON.stringify({
             username: identificacao.username.toString(),
