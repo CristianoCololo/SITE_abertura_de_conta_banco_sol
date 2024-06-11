@@ -3,48 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/fontes.css">
-    <link rel="stylesheet" href="css/destyle.css">
-    <link rel="stylesheet" href="css/index_style.css">
-    <title>Document</title>
+    <title>Sol::CriarContaOnline</title>
 </head>
 <body>
-    <nav>
-        <form action="" method="post">
-            
-        </form>
-    </nav>
     <header>
-        <h1>BANCO SOL</h1>
-        <span>Abertura de Conta no Banco Sol Online</span>
+        <nav>
+            <ul>
+                <li>Principal</li>
+                <li>Entrar</li>
+                <li>Aderir</li>
+                <li>Ajuda</li>
+                <li>Sobre</li>
+            </ul>
+        </nav>
     </header>
-
-    <div class="form">
-        <div class="email_div">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-        </div>
-
-        <div class="passcode_div">
-            <label for="username">Codigo Passe</label>   
-            <input type="password" id="password" name="code" inputmode="numeric" pattern="[0-9]*" maxlength="6">
-        </div>
-        
-        <input type="submit" value="Entrar" id="buttonEntrar" >
-        <form action="aderir.php" method="post">
-        <input type="hidden" name="article" value="identificacao">
-        <input type="submit" value="Aderir" id="buttonAderir">
-    </form>
-    </div>
-
-    
-      
-      
-        
-    
-    
-    
-    
-    <script src="js/index_controller.js"></script>    
+    <main>
+        <div class="left_content"></div>
+        <div class="right_content"></div>
+    </main>
+    <footer></footer>
 </body>
 </html>

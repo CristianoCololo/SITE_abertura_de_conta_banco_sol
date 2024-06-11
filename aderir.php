@@ -13,9 +13,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aderir::<?php echo $articles_posted ?></title>
-    <link rel="stylesheet" href="css/fontes.css">
-    <link rel="stylesheet" href="css/destyle.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/fontes.css">
+    <link rel="stylesheet" href="assets/css/destyle.css">
+    <link rel="stylesheet" href="assets/css/aderir_style.css">
 </head>
 
 <body>

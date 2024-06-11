@@ -9,12 +9,7 @@
 <body>
     <?php
     if (isset($_POST['']) && $_POST['']) {
-        $servername = "localhost";
-        $database = "sol";
-        $username = "root";
-        $password = "";
-
-        $conn = mysqli_connect($servername, $username, $password, $database);
+        require_once('./php/database_conexao.php');
 
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
@@ -39,7 +34,7 @@
             </div>
         </main>
     <?php else:?>
-    
+        <script> window.location.href = 'index.php' </script>
     <?php endif ?>
     
 </body>
