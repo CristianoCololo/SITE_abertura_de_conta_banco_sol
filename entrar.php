@@ -52,10 +52,15 @@ if (isset($_POST["article"])) {
             <div class="buttons">
                 <button id="entrar">Entrar</button>
             </div>
-            <p>Se ainda nao tem uma conta, clique <a href="">aqui</a> para aderir</p>
+            <p>Se ainda nao tem uma conta, clique <a href="aderir.php">aqui</a> para aderir</p>
         </article>
     </main>
-
+    <script>
+        function goto(params) {
+            window.location.href = params;
+        }
+    </script>
+    <script src="js/entrar.js"></script>
     <script type="module" src="js/utils.js"></script>
     <script type="module" src="js/sendForm.js"></script>
     <script type="module" src="js/elementos.js"></script>
