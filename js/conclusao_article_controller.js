@@ -1,48 +1,27 @@
-const feito_button = document.querySelector("#feito");
-const descartar_button = document.querySelector("#descartar");
+import { feito, descartar } from "./elementos";
 
-feito_button.addEventListener('click', () => {
-    let dadosIdentificacao = JSON.parse(localStorage.getItem('dadosIdentificacao'));
-    let dadosDocumentacao = JSON.parse(localStorage.getItem('dadosDocumentacao'));
-    let dadosAdicional = JSON.parse(localStorage.getItem('dadosAdicional'));
+feito.addEventListener('click', () => {
+    const identificacao = JSON.parse(localStorage.getItem('a_iden'));
+    //const documentacao = JSON.parse(localStorage.getItem('b_docu'));
+    //const adicional = JSON.parse(localStorage.getItem('c_adic'));
 
-    
-
-    let dados_para_guardar = {
-        'nome_do_usuario' : dadosIdentificacao['username'],
-        'email': dadosIdentificacao['email'],
-        'codigo': dadosIdentificacao['password'],
-        'numero_bilhete': dadosDocumentacao['bi'],
-        //'genero': dadosAdicional['genero'],
-        //'provincia': dadosAdicional['provincia'],
-        'submit' :  "<code."
-    }
-
-    let result;
-
-    var requestOptions = {
+    fetch('../create.php', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(dados_para_guardar)
-    };
-
-    fetch('armazenarDados.php', requestOptions)
-    .then(function(response) {
-        if (!response.ok) {
-            throw new Error('Ocorreu um erro ao processar a solicitação.');
+        body: JSON.stringify({
+            username: identificacao.username.toString(),
+            email: identificacao.email.toString(),
+        }),
+        headers: {
+            'Content-Type': 'application/json'
         }
-        return response.text();
     })
-    .then(function(data) {
-        console.log(data);
-    })
-    .catch(function(error) {
-        console.error('Erro:', error);
-    });
-
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => console.error('Erro:', error));
+    
 });
 
-descartar_button.addEventListener('click', () => {
+descartar.addEventListener('click', () => {
     localStorage.clear();
     window.location.href = 'index.php';  
 });

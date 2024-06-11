@@ -25,23 +25,23 @@ function processarDocumentacao() {
     
     if (numero_bi === '') {
         return { 
-            'sucesso': false, 
-            'info': "Numero de bi nao pode estar vazio",
-            'dados': null,
+            sucesso: false, 
+            info: "Numero de bi nao pode estar vazio",
+            dados: null,
         };
     }
     if (!((/^\d{9}[A-Z]{2}\d{3}$/).test(numero_bi))) {
         return { 
-            'sucesso': false, 
-            'info': "Este nao e um numero de BI Angolano valido",
-            'dados': null,
+            sucesso: false, 
+            info: "Este nao e um numero de BI Angolano valido",
+            dados: null,
         };
     }
     return { 
-        'sucesso': true, 
-        'info': "",
-        'dados': {
-            'bi' : numero_bi,
+        sucesso: true, 
+        info: "",
+        dados: {
+            bi : numero_bi,
         },
     };;
 }

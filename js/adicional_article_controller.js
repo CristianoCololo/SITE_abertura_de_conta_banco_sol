@@ -27,27 +27,27 @@ function processarAdicional() {
 
     if (!data_de_nascimento) {
         return {
-            'sucesso': false,
-            'info': "A data nao pode estar vazia",
-            'dados': null,
+            sucesso: false,
+            info: "A data nao pode estar vazia",
+            dados: null,
         };
     }
     const data_object = new Date(data_de_nascimento);
 
     if (2024 - parseInt(data_object.getFullYear()) < 18) {
         return {
-            'sucesso': false,
-            'info': "Tem que ser maior de idade  para criar uma conta online",
-            'dados': null,
+            sucesso: false,
+            info: "Tem que ser maior de idade  para criar uma conta online",
+            dados: null,
         };
     }
     return {
-        'sucesso': true,
-        'info': "",
-        'dados': {
-            'data': (toString(data_object.getFullYear()) + "-" + toString(data_object.getMonth()) + "-" + toString(data_object.getDay())),
-            'genero': genero,
-            'provincia': provincia,
+        sucesso: true,
+        info: "",
+        dado: {
+            data: (toString(data_object.getFullYear()) + "-" + toString(data_object.getMonth()) + "-" + toString(data_object.getDay())),
+            genero: genero,
+            provincia: provincia,
         },
     };
 }
