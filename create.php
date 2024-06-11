@@ -1,26 +1,21 @@
 <?php
-
-if ($conexao->connect_error) {
-    die("Conexão falhou: " . $conexao->connect_error);
+$servername = "localhost";
+$database = "sol";
+$username = "rooy";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
 }
-
-$dados = json_decode(file_get_contents("php://input"), true);
-
-
-$query = "INSERT INTO ususario (username, email) VALUES (?, ?)";
-$instrucao = $conexao->prepare($query);
-
-$instrucao->bind_param("ss", $dados['username'], $dados['email']);
-$instrucao->execute();
-
-if ($instrucao->affected_rows > 0) {
-    $resposta = array('status' => 'sucesso', 'mensagem' => 'Dados inseridos com sucesso.');
+ 
+echo "Connected successfully";
+ 
+$sql = "INSERT INTO usuario (username) VALUES ('".$_POST['username']."')";
+if (mysqli_query($conn, $sql)) {
+      echo "New record created successfully";
 } else {
-    $resposta = array('status' => 'erro', 'mensagem' => 'Falha ao inserir dados.');
+      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
-$instrucao->close();
-$conexao->close();
-
-header('Content-Type: application/json');
-echo json_encode($resposta);
+mysqli_close($conn);

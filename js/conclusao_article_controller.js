@@ -5,19 +5,19 @@ feito.addEventListener('click', () => {
     //const documentacao = JSON.parse(localStorage.getItem('b_docu'));
     //const adicional = JSON.parse(localStorage.getItem('c_adic'));
 
-    fetch('create.php', {
-        method: 'POST',
-        body: JSON.stringify({
-            username: identificacao.username.toString(),
-            email: identificacao.email.toString(),
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch((error) => console.error('Erro:', error));
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'create.php';
+
+    const hiddenField = document.createElement('input');
+    hiddenField.type = 'hidden';
+    hiddenField.name = 'username';
+    hiddenField.value = identificacao.username.toString();
+    form.appendChild(hiddenField);
+
+    form.style.display = "none";
+    document.body.appendChild(form);
+    form.submit();
     
 });
 
