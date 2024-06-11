@@ -35,18 +35,6 @@
         <input type="hidden" name="article" value="identificacao">
         <input type="submit" value="Aderir" id="buttonAderir">
     </form>
-
-      <footer style="footer:
-	width:876px;
-	height:14px;
-	padding:10px;
-	background-color:yellow; 
-	font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
-	font-size:12px;
-	clear:both;
-	text-align:center;">
-        BANCOL SOL
-      </footer>
     </div>
 
     

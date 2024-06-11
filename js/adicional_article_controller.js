@@ -44,8 +44,8 @@ function processarAdicional() {
     return {
         sucesso: true,
         info: "",
-        dado: {
-            data: (toString(data_object.getFullYear()) + "-" + toString(data_object.getMonth()) + "-" + toString(data_object.getDay())),
+        dados: {
+            data: (data_object.getFullYear().toString() + "-" + data_object.getMonth().toString() + "-" + data_object.getDay().toString()),
             genero: genero,
             provincia: provincia,
         },
