@@ -13,7 +13,7 @@ body {
 
 header {
     flex-grow: 2;
-    background-color: transparent;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.281) 0%, rgba(255, 255, 255, 0) 0%);
     width: 100%;
     padding: 25px 10px;
 }
@@ -89,7 +89,8 @@ main .left_content button {
 
 
 footer {
-    background: linear-gradient(#00000000, #000);
+    background: linear-gradient(to top,#000 65%, #00000000 100%);
+    
     width: 100%;
     padding: 25px 10px;
     display: flex;
