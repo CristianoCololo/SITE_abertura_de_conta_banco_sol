@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/fontes.css">
+    <link rel="stylesheet" href="./assets/css/perfil_style.css">
 </head>
 
 <body>
@@ -43,16 +45,31 @@
     ?>
 
     <?php
-        if ($sucesso):
+    if ($sucesso) :
     ?>
 
         <main>
-             
+            <header>
+                <div class="bancosol">
+                    <img src="./assets/img/imagemsol.png" alt="">
+                </div>
 
+                <button>Perfil</button>
+            </header>
+            <div class="perfil">
+                <div class="foto">
+                    <img src="" alt="">
+                </div>
+                <h2> <?php echo $name; ?> </h2>
+            </div>
+            <div class="saldo">
+                <label>Saldo Actual</label>
+            </div>
+<img src="./assets/img/phone.png" alt="" id="phone">
         </main>
 
     <?php
-        endif;
+    endif;
     ?>
 </body>
 

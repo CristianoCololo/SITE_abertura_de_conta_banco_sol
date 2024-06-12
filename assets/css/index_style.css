@@ -1,34 +1,49 @@
-.page{
+body {
+    background-image: url('../img/home.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    height: 100vh;
 }
 
-header{
+header {
     flex-grow: 2;
-    background-color: #fff;
+    background-color: transparent;
     width: 100%;
     padding: 25px 10px;
 }
-header nav{
+
+header nav {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
-header nav ul{
+
+header nav ul {
     display: flex;
     flex-direction: row;
+    margin-left: 40px;
+    margin-top: 30px;
+    font-size: 1.2em;
     gap: 50px;
 }
-header nav ul li{
+
+header nav ul li {
     flex-grow: 1;
     list-style: none;
+    font-family: "Ub";
+    color: white;
 }
 
-main{
-     flex-grow: 8;
-    background-color: #fff;
+main {
+    flex-grow: 8;
+    background-color: transparent;
     width: 100%;
     padding: 25px 10px;
     display: flex;
@@ -36,7 +51,8 @@ main{
     justify-content: center;
     align-items: center;
 }
-main .left_content{
+
+main .left_content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -48,36 +64,32 @@ main .left_content{
     font-size: 1.1em;
     width: 400px;
 }
-main .left_content p{
-    line-height: 24px;
+
+main .left_content p {
+    width: 350px;
+    font-family: "Ub";
+    color: white;
+    text-align: left;
+    line-height: 30px;
     letter-spacing: 1.2px;
 }
-main .left_content button{
-    background-color: #FFC800;
+
+main .left_content button {
+    background-color: #FCD925;
     font-family: 'Ub';
-    color: #fff;
+    color: #000;
     text-align: center;
-    padding: 20px 40px;
-    width: 200px;
+    padding: 15px 40px;
+    width: 150px;
     border-radius: 15px;
     font-size: 1.2em;
     border: none;
+    margin: 10px;
 }
 
-main .right_content{
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-main .right_content img{
-    width: 650px;
-}
 
-footer{
-    position: absolute;
-    bottom: 0;
-    background-color: #FFC800;
+footer {
+    background: linear-gradient(#00000000, #000);
     width: 100%;
     padding: 25px 10px;
     display: flex;
@@ -87,12 +99,16 @@ footer{
     margin: 0;
 }
 
-footer div{
+footer div {
     flex-grow: 1;
     padding: 0 40px;
-}
-footer div ul li{
-    list-style: none;
+    color: #fff;
     font-family: 'Ub';
+}
+
+footer div ul li {
+    list-style: none;
+    font-weight: lighter;
+    font-family: 'Ur';
     color: #fff;
 }

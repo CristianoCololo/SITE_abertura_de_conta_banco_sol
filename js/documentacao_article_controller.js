@@ -4,6 +4,7 @@ import { avancar, voltar } from "./elementos";
 
 voltar.addEventListener('click', () => {
     (localStorage.getItem('b_docu')) ? localStorage.removeItem('b_docu') : console.log() ;
+    (localStorage.getItem('a_iden')) ? localStorage.removeItem('a_iden') : console.log() ;
     sendForm('POST','aderir.php','article','identificacao');
 });
 

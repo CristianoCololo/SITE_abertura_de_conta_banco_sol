@@ -1,0 +1,62 @@
+header {
+    display: flex;
+}
+
+header button{
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    margin-right: 50px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 25px;
+    
+}
+
+header button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #FCD925;
+    color: white;
+}
+
+
+.bancosol {
+    flex-grow: 4;
+}
+
+.bancosol img {
+    width: 400px;
+    height: 100px;
+}
+ 
+.saldo{
+    padding-left: 20px;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: column;
+    font-family: "Ub";
+    padding-left: 20px;
+    margin-top: 20px;
+}
+.foto{
+    display: flex;
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+.foto img{
+    transform: scale(.5);
+}
+#phone{
+    position: absolute;
+    right: 5%;
+    top: 40%;
+    transform: scale(2);
+}

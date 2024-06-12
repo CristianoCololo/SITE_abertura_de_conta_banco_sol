@@ -14,11 +14,10 @@
     <header>
         <nav>
             <ul>
-                <li onclick="goto('index.php')">Principal</li>
-                <li onclick="goto('entrar.php')">Entrar</li>
-                <li onclick="goto('aderir.php')">Aderir</li>
-                <li onclick="goto('index.php')">Ajuda</li>
-                <li onclick="goto('index.php')">Sobre</li>
+                <li onclick="goto('index.php')">Home</li>
+                <li onclick="goto('entrar.php')">Login</li>
+                <li onclick="goto('aderir.php')">Sign Up</li>
+                <li onclick="goto('index.php')">About</li>
             </ul>
         </nav>
     </header>
@@ -30,9 +29,6 @@
                 da sua casa. </p>
             <p>Adira Ja</p>
             <button id="aderir">Aderir</button>
-        </div>
-        <div class="right_content">
-            <img src="./assets/img/main.png" alt="">
         </div>
     </main>
     </div>
